@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wiki Application</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef4ff;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background-color: white;
+            max-width: 650px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #00000015;
+        }
+
+        h1 {
+            color: #2563eb;
+        }
+
+        p {
+            color: #475569;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 th:text="${title}">
+            Wiki Title
+        </h1>
+
+        <p th:text="${message}">
+            Welcome message
+        </p>
+
+        <p>
+            Assessment 2 - Spring Boot and Thymeleaf
+        </p>
+
+    </div>
+</body>
+</html>

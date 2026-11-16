@@ -1,0 +1,488 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuzhou Melbourne Polytechnic</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f3f8fc;
+            color: #20374a;
+        }
+
+        /* School header */
+        header {
+            background: linear-gradient(120deg, #073b62, #07547c);
+            color: white;
+            border-bottom: 5px solid #e8b64c;
+            padding: 24px 6%;
+        }
+
+        .header-content {
+            max-width: 1150px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .logo {
+            background: #e8b64c;
+            color: #073b62;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 19px;
+        }
+
+        .school-name h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .school-name p {
+            margin: 8px 0 0;
+            color: #d1e8f3;
+            font-size: 13px;
+        }
+
+        .tagline {
+            color: #f6d88b;
+            font-size: 13px;
+            text-align: right;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            border-bottom: 1px solid #dae5ee;
+            box-shadow: 0 2px 8px #0e416010;
+        }
+
+        .nav-content {
+            max-width: 1150px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0 18px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #345269;
+            padding: 18px 16px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #07527f;
+            border-bottom: 3px solid #07527f;
+        }
+
+        /* Main hero area */
+        .hero {
+            max-width: 1150px;
+            margin: 46px auto;
+            padding: 55px 45px;
+            background: linear-gradient(125deg, #ffffff, #e5f3fc);
+            border-radius: 20px;
+            box-shadow: 0 8px 26px #0e416015;
+
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 45px;
+        }
+
+        .welcome-label {
+            color: #1779ad;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero h2 {
+            color: #174765;
+            font-size: 38px;
+            line-height: 1.25;
+            margin: 16px 0 22px;
+        }
+
+        .hero h2 span {
+            color: #0873a2;
+        }
+
+        .hero p {
+            color: #576e7e;
+            line-height: 1.9;
+            font-size: 16px;
+            margin-bottom: 28px;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 23px;
+            border-radius: 28px;
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+            color: white;
+            background-color: #08618e;
+        }
+
+        .btn-secondary {
+            color: #07527f;
+            background: white;
+            border: 1px solid #a7cadb;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px #07527f22;
+        }
+
+        /* Quick facts card */
+        .facts {
+            background: linear-gradient(145deg, #07578a, #073d69);
+            padding: 28px;
+            border-radius: 18px;
+            color: white;
+            box-shadow: 0 12px 24px #0a507030;
+        }
+
+        .facts h3 {
+            margin: 0 0 20px;
+            font-size: 20px;
+            color: white;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .fact {
+            background: #ffffff16;
+            padding: 18px;
+            border-radius: 12px;
+            min-height: 100px;
+        }
+
+        .fact-label {
+            font-size: 11px;
+            color: #b9d8ea;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .fact-value {
+            font-size: 23px;
+            color: #f4cf70;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* Additional sections */
+        .content-section {
+            max-width: 1150px;
+            margin: 25px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 3px 14px #0e416010;
+            scroll-margin-top: 24px;
+        }
+
+        .content-section h2 {
+            color: #07527f;
+            font-size: 24px;
+            margin-top: 0;
+        }
+
+        .content-section p {
+            line-height: 1.8;
+            color: #536b7b;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 22px;
+        }
+
+        .card {
+            background: #eef6fc;
+            border-radius: 12px;
+            padding: 22px;
+            border-top: 4px solid #e8b64c;
+        }
+
+        .card h3 {
+            color: #174765;
+        }
+
+        footer {
+            text-align: center;
+            background: #073b62;
+            color: #d1e8f3;
+            padding: 25px;
+            margin-top: 45px;
+            font-size: 13px;
+        }
+
+        /* Responsive mobile layout */
+        @media (max-width: 800px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 30px 22px;
+                margin: 18px;
+            }
+
+            .hero h2 {
+                font-size: 30px;
+            }
+
+            .header-content {
+                align-items: flex-start;
+            }
+
+            .tagline {
+                display: none;
+            }
+
+            .school-name h1 {
+                font-size: 19px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .content-section {
+                margin: 18px;
+            }
+
+            nav a {
+                padding: 13px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- School header -->
+    <header id="home">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="logo">FMP</div>
+                <div class="school-name">
+                    <h1>Fuzhou Melbourne Polytechnic</h1>
+                    <p>China · Australia · Since 2016</p>
+                </div>
+            </div>
+
+            <div class="tagline">
+                Dual degrees · Global perspective
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#programs">Programs</a>
+            <a href="#admissions">Admissions</a>
+            <a href="#campus">Campus</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main welcome section -->
+    <main>
+        <section class="hero">
+
+            <div class="hero-text">
+                <div class="welcome-label">
+                    Welcome to Fuzhou Melbourne Polytechnic
+                </div>
+
+                <h2>
+                    Where East meets South<br>
+                    <span>Innovation &amp; tradition</span>
+                </h2>
+
+                <p>
+                    Fuzhou Melbourne Polytechnic brings together
+                    the best of Chinese and Australian education.
+                    Earn a globally recognised dual degree,
+                    study in two vibrant cities, and join a
+                    community of future leaders.
+                </p>
+
+                <div class="buttons">
+                    <a href="#programs" class="btn btn-primary">
+                        Explore programs
+                    </a>
+
+                    <a href="#admissions" class="btn btn-secondary">
+                        Apply now
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick facts -->
+            <div class="facts">
+                <h3>▣ Quick facts</h3>
+
+                <div class="facts-grid">
+                    <div class="fact">
+                        <div class="fact-label">Established</div>
+                        <div class="fact-value">2016</div>
+                    </div>
+
+                    <div class="fact">
+                        <div class="fact-label">Students</div>
+                        <div class="fact-value">3,200+</div>
+                    </div>
+
+                    <div class="fact">
+                        <div class="fact-label">Dual degrees</div>
+                        <div class="fact-value">12</div>
+                    </div>
+
+                    <div class="fact">
+                        <div class="fact-label">Partner</div>
+                        <div class="fact-value" style="font-size:17px;">
+                            Melbourne Poly
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- About section -->
+        <section class="content-section" id="about">
+            <h2>About Us</h2>
+            <p>
+                Welcome to Fuzhou Melbourne Polytechnic.
+                We bring together educational perspectives
+                from China and Australia, encouraging
+                innovation, creativity and international learning.
+            </p>
+        </section>
+
+        <!-- Programs section -->
+        <section class="content-section" id="programs">
+            <h2>Explore Our Programs</h2>
+            <p>
+                Discover learning opportunities designed
+                to help students develop practical skills
+                and a global perspective.
+            </p>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>International Education</h3>
+                    <p>
+                        Develop knowledge and experience
+                        through international learning.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Applied Learning</h3>
+                    <p>
+                        Build practical skills through
+                        hands-on learning experiences.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Future Opportunities</h3>
+                    <p>
+                        Prepare for your future career
+                        with a global perspective.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admissions section -->
+        <section class="content-section" id="admissions">
+            <h2>Admissions</h2>
+            <p>
+                Interested in studying with us?
+                Explore our programs and learn about
+                educational opportunities.
+            </p>
+        </section>
+
+        <!-- Campus section -->
+        <section class="content-section" id="campus">
+            <h2>Campus Life</h2>
+            <p>
+                Experience a welcoming learning environment
+                where education and cultural exchange
+                come together.
+            </p>
+        </section>
+
+        <!-- Contact section -->
+        <section class="content-section" id="contact">
+            <h2>Contact Us</h2>
+            <p>
+                For more information about the college,
+                visit its official information channels.
+            </p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        Fuzhou Melbourne Polytechnic<br>
+        Assessment 2 Preparation | Spring Boot Website
+    </footer>
+
+</body>
+</html>
